@@ -1154,7 +1154,6 @@ GameObject:
   - component: {fileID: 4505524010301255993}
   - component: {fileID: 8212141397144886142}
   - component: {fileID: 152584437}
-  - component: {fileID: 2086248828}
   m_Layer: 0
   m_Name: FPS_Character
   m_TagString: Untagged
@@ -1269,19 +1268,6 @@ MonoBehaviour:
   mouseLook: {fileID: 4505524010301255993}
   Camera: {fileID: 5724555750506375673}
   aimUI: {fileID: 0}
---- !u!114 &2086248828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7807251799965464152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a0eb16b053fc5244ba8d77741a957bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
 --- !u!1 &8380700301607821535
 GameObject:
   m_ObjectHideFlags: 0

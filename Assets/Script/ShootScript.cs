@@ -34,6 +34,9 @@ public class ShootScript : MonoBehaviour
     public Camera Camera;
     public GameObject aimUI;
 
+    [Header("Reload Script")]
+    public Reloading reloadScript;
+
 
     private void Awake()
     {
@@ -49,8 +52,13 @@ public class ShootScript : MonoBehaviour
         if (Input.GetButton("Fire1") && Time.time > nextFire && canShoot)
         {
             nextFire = Time.time + fireRate;
-            Shoot();
-            StartCoroutine(PlayShootingAnimation());
+            if(reloadScript.needReload == false)
+            {
+                Shoot();
+                reloadScript.UseAmmo();
+                //count_Reload.Count();
+                StartCoroutine(PlayShootingAnimation());
+            }
         }
 
         if (Input.GetButtonDown("Fire2"))
@@ -63,7 +71,7 @@ public class ShootScript : MonoBehaviour
     {
         Quaternion originalRotation = bulletSpawn.rotation;
         ApplyRecoil();
-
+        SoundManager.Sfx.playARSound();
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
         bulletRb.AddForce(bulletSpawn.forward * bulletForce);

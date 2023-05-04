@@ -8,7 +8,6 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Transform healthBar;
     [SerializeField] private Image healthFill;
     [SerializeField] private float lerpSpeed = 5f;
-    [SerializeField] private float offsetY = 1f;
     [SerializeField] private EnemyManager enemyManager;
     [SerializeField] private GameObject healthBarObj;
 

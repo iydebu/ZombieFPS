@@ -121,8 +121,9 @@ public class EnemyManager : MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag("Player"))
             {
-                Debug.Log("Attacking");
+                //Debug.Log("Attacking");
                 animator.SetTrigger("isAttacking");
+
             }
         }
     }
@@ -135,7 +136,9 @@ public class EnemyManager : MonoBehaviour
         {
             Debug.Log("Player is within attack range");
             // Send damage to the player
-            player.GetComponent<Player>().TakeDamage(Playerdamage);
+            //player.GetComponent<Player>().TakeDamage(Playerdamage);
+            Player.instance.TakeDamage(Playerdamage);
+            SoundManager.Sfx.playManPain();
         }
     }
 

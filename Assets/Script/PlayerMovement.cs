@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
         if (sprintTimer > 0f)
         {
             sprintTimer -= Time.deltaTime;
-
+            Player.instance.UseStamina(0.1f);
             if (sprintTimer <= 0f)
             {
                 isSprinting = false;
